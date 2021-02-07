@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.centro {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.centro .estrela {
+  height: 150px;
+  width: 500px;
+  text-align: center;
+}
+.estrela input {
+  display: none;
+}
+.estrela label {
+  float: right;
+  font-size: 100px;
+  color: lightgrey;
+  margin: 0 5px;
+  text-shadow: 1px 1px #bbb;
+}
+.estrela label:before {
+  content: "★";
+}
+.estrela input:checked ~ label {
+  color: gold;
+  text-shadow: 1px 1px #c60;
+}
+.estrela:not(:checked) > label:hover,
+.estrela:not(:checked) > label:hover ~ label {
+  color: gold;
+}
+.estrela input:checked > label:hover,
+.estrela input:checked > label:hover ~ label {
+  color: gold;
+  text-shadow: 1px 1px goldenrod;
+}
+.estrela .resultado:before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  left: 50%;
+  transform: translateX(-47%);
+  bottom: -30px;
+  font-size: 30px;
+  font-weight: 500;
+  color: gold;
+  font-family: "Poppins", sans-serif;
+  display: none;
+}
+.estrela input:checked ~ .resultado:before {
+  display: block;
+}
+.estrela #cinco:checked ~ .resultado:before {
+  content: "Amei 😍";
+}
+.estrela #quatro:checked ~ .resultado:before {
+  content: "Gostei 😎";
+}
+.estrela #tres:checked ~ .resultado:before {
+  content: "Bom 😄";
+}
+.estrela #dois:checked ~ .resultado:before {
+  content: "Não gostei 😒";
+}
+.estrela #um:checked ~ .resultado:before {
+  content: "Odiei 😠";
+}
