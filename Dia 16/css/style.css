@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: url(../imagens/fundo.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  position: relative;
+}
+
+body .imagem-fundo {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.85;
+}
+
+.centro,
+.carta-frente,
+.carta-costas {
+  position: absolute;
+}
+
+.centro {
+  top: 50%;
+  left: 50%;
+  height: 400px;
+  width: 300px;
+  transform: translate(-50%, -50%);
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.carta-frente {
+  background: url(../imagens/imagem1.jpg);
+}
+
+.carta-costas {
+  transform: rotateY(180deg);
+  background: url(../imagens/imagem2.jpg.crdownload);
+  transform-style: preserve-3d;
+}
+
+.carta-frente,
+.carta-costas {
+  height: 100%;
+  width: 100%;
+  transform: translateY(0deg);
+  border-radius: 10px;
+  transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+  backface-visibility: hidden;
+  background-size: cover;
+  background-position: center;
+  transform-style: preserve-3d;
+}
+
+.centro:hover > .carta-costas {
+  transform: rotateY(0deg);
+}
+
+.centro:hover > .carta-frente {
+  transform: rotateY(-180deg);
+}
