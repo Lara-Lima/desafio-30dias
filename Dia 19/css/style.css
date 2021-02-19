@@ -1,0 +1,125 @@
+* body {
+  background: #000000;
+}
+.holder {
+  margin: 12rem auto 0;
+  width: 150px;
+  height: 400px;
+  position: relative;
+}
+.holder *,
+.holder *:before,
+.holder *:after {
+  position: absolute;
+  content: "";
+}
+
+.candle {
+  bottom: 0;
+  width: 150px;
+  height: 300px;
+  border-radius: 150px / 40px;
+  background: linear-gradient(#e6dfdf, #fce2a6, #968e8e);
+}
+
+.candle:before {
+  width: 9.2em;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #e3dadb;
+  background: #f2efec;
+}
+.candle:after {
+  width: 33px;
+  height: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  top: 14px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
+}
+
+.thread {
+  width: 6px;
+  height: 36px;
+  top: -17px;
+  left: 50%;
+  z-index: 1;
+  border-radius: 40% 40% 0 0;
+  transform: translateX(-50%);
+  background: #121212;
+}
+
+.flame {
+  width: 24px;
+  height: 120px;
+  left: 50%;
+  transform-origin: 50% 100%;
+  transform: translateX(-50%);
+  bottom: 100%;
+  border-radius: 50% 50% 20% 20%;
+  background: linear-gradient(white 80%, transparent);
+  animation: moveFlame 6s linear infinite, enlargeFlame 5s linear infinite;
+}
+
+@keyframes moveFlame {
+  0%,
+  100% {
+    transform: translateX(-50%) rotate(-2deg);
+  }
+  50% {
+    transform: translateX(-50%) rotate(2deg);
+  }
+}
+
+@keyframes enlargeFlame {
+  0%,
+  100% {
+    height: 120px;
+  }
+  50% {
+    height: 140px;
+  }
+}
+
+.glow {
+  width: 26px;
+  height: 60px;
+  border-radius: 50% 50% 35% 35%;
+  left: 50%;
+  top: -48px;
+  transform: translateX(-50%);
+  background: rgba(88, 174, 255, 0.7);
+  box-shadow: 0 -40px 30px 0 #dc8a0c, 0 40px 50px 0 #dc8a0c,
+    inset 3px 0 2px 0 rgba(88, 174, 255, 0.6),
+    inset -3px 0 2px 0 rgba(88, 174, 255, 0.6);
+}
+
+.glow:before {
+  width: 70%;
+  height: 60%;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.blinking-glow {
+  width: 100px;
+  height: 180px;
+  left: 50%;
+  top: -55%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: #ff6000;
+
+  filter: blur(60px);
+  animation: blinkIt 0.1s infinite;
+}
+
+@keyframes blinkIt {
+  50% {
+    opacity: 0.8;
+  }
+}
