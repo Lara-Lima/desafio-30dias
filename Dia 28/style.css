@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+* {
+  padding: 0;
+  margin: 0 auto;
+}
+
+body {
+  background: black;
+}
+
+.imagem-fundo {
+  background-image: url(./imagens/fundo.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 45vh;
+  position: relative;
+}
+
+.topo {
+  background-color: black;
+  color: #f3f3f3;
+  padding: 8px;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+}
+
+.janela {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 20px;
+  flex: 0 auto;
+}
+
+.janela-palestrante {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+  width: 400px;
+  margin: 10px;
+  z-index: 1;
+}
+.imagens {
+  position: absolute;
+  clip: rect(0px 400px 200px 0);
+  object-fit: cover;
+}
+
+img {
+  object-fit: cover;
+  height: 200px;
+  width: 400px;
+}
+
+.janela-texto {
+  top: 9em;
+  position: absolute;
+  height: 100%;
+  width: 98%;
+  background-color: #000;
+  z-index: 2;
+  padding: 5px;
+  opacity: 0.7;
+  cursor: pointer;
+  transition: all 0.5s ease-out;
+}
+
+.janela-texto:hover {
+  top: 60px;
+}
+
+h2 {
+  font-size: 28px;
+  letter-spacing: -0.1em;
+}
+
+h2,
+p {
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+}
+
+p {
+  margin-top: 8px;
+  font-size: 18px;
+}
