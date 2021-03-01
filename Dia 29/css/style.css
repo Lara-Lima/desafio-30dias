@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.fundo {
+  background-color: #000;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  height: 50%;
+}
+
+.barra {
+  background-color: #9b9e95;
+  height: 8px;
+  width: 300px;
+  border-radius: 10px;
+}
+
+.pendulo {
+  display: flex;
+}
+
+.linha-posicao {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.linha {
+  background-color: #9b9e95;
+  height: 200px;
+  width: 2px;
+}
+
+.esfera {
+  background-color: #9b9e95;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+}
+
+.balanco1 {
+  animation: balanco1 alternate infinite 0.9s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: none;
+  animation-play-state: running;
+}
+
+@keyframes balanco1 {
+  0%,
+  50% {
+    transform: rotate(0);
+    transform-origin: top;
+  }
+
+  100% {
+    transform-origin: top;
+    transform: rotate(55deg);
+  }
+}
+
+.balanco2 {
+  animation: balanco2 alternate 0.9s;
+  animation-delay: 0.9s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes balanco2 {
+  0%,
+  50% {
+    transform: rotate(0);
+    transform-origin: top;
+  }
+
+  100% {
+    transform-origin: top;
+    transform: rotate(-55deg);
+  }
+}
